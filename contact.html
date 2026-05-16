@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – PaycheckEstimates.com</title>
+<meta name="description" content="Contact PaycheckEstimates.com. Get in touch with questions, feedback, or suggestions about our free US paycheck calculator.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1D3A;--navy-mid:#162C52;--blue:#2563EB;--blue-pale:#EFF6FF;--green:#059669;--green-pale:#ECFDF5;--border:#E2E8F0;--bg:#F8FAFC;--white:#FFFFFF;--text:#0F172A;--text-muted:#475569;--slate:#64748B;--radius:12px;--shadow:0 1px 3px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Sora',sans-serif;line-height:1.25}
+header{background:var(--navy);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2)}
+.header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-icon{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
+.nav-link{font-size:14px;color:#93C5FD;text-decoration:none;font-weight:500}
+.nav-link:hover{color:#fff}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:48px 24px;text-align:center}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero h1{font-size:clamp(24px,3.5vw,36px);font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-0.02em}
+.hero p{color:#93C5FD;font-size:15px}
+main{max-width:900px;margin:0 auto;padding:48px 24px 80px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
+.card-title{font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--navy);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.card-title::before{content:'';display:block;width:4px;height:18px;background:var(--blue);border-radius:2px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border)}
+.contact-item:last-child{border-bottom:none}
+.contact-icon{width:40px;height:40px;background:var(--blue-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-label{font-size:12px;color:var(--slate);font-weight:500;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:4px}
+.contact-value{font-size:15px;font-weight:500;color:var(--text)}
+.contact-value a{color:var(--blue);text-decoration:none}
+.contact-value a:hover{text-decoration:underline}
+.contact-note{font-size:12px;color:var(--slate);margin-top:3px}
+label{display:block;font-size:13px;font-weight:500;color:var(--text-muted);margin-bottom:6px;letter-spacing:0.02em}
+input[type="text"],input[type="email"],textarea,select{width:100%;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:var(--white);padding:10px 14px;outline:none;transition:border-color 0.15s,box-shadow 0.15s;appearance:none;-webkit-appearance:none;margin-bottom:16px}
+input[type="text"]:focus,input[type="email"]:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,0.12)}
+textarea{resize:vertical;min-height:120px;line-height:1.5}
+.select-wrap{position:relative;margin-bottom:16px}
+.select-wrap select{margin-bottom:0;padding-right:36px}
+.select-arrow{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--slate);font-size:12px}
+.submit-btn{width:100%;height:48px;background:linear-gradient(135deg,#1D4ED8,#2563EB);border:none;border-radius:10px;color:white;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:opacity 0.15s,transform 0.1s;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
+.submit-btn:hover{opacity:0.92;transform:translateY(-1px)}
+.submit-btn:active{transform:translateY(0)}
+.success-box{display:none;background:var(--green-pale);border:1px solid #A7F3D0;border-radius:10px;padding:20px;text-align:center;margin-top:16px}
+.success-box.show{display:block}
+.success-box h3{font-family:'Sora',sans-serif;color:var(--green);font-size:16px;margin-bottom:6px}
+.success-box p{font-size:14px;color:#065F46;margin:0}
+.faq-quick{margin-top:20px}
+.faq-quick h3{font-family:'Sora',sans-serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:14px}
+.faq-quick-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-bottom:8px}
+.faq-quick-item strong{font-size:14px;color:var(--text);display:block;margin-bottom:4px}
+.faq-quick-item p{font-size:13px;color:var(--text-muted);margin:0}
+footer{background:var(--navy);color:#94A3B8;text-align:center;padding:32px 24px}
+footer p{font-size:13px;margin-bottom:8px}
+footer a{color:#60A5FA;text-decoration:none}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:12px}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}.hero{padding:36px 20px}.card{padding:24px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo"><div class="logo-icon">💵</div>PaycheckEstimates</a>
+    <a href="/" class="nav-link">← Back to Calculator</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Contact Us</h1>
+    <p>Have a question or feedback? We'd love to hear from you.</p>
+  </div>
+</section>
+<main>
+  <div class="contact-grid">
+
+    <!-- LEFT: CONTACT INFO -->
+    <div>
+      <div class="card">
+        <div class="card-title">Get In Touch</div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:contact@paycheckestimates.com">contact@paycheckestimates.com</a></div>
+            <div class="contact-note">We reply within 24–48 hours</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div>
+            <div class="contact-label">Website</div>
+            <div class="contact-value"><a href="https://paycheckestimates.com">paycheckestimates.com</a></div>
+            <div class="contact-note">Free US Paycheck Calculator</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div>
+            <div class="contact-label">Response Time</div>
+            <div class="contact-value">Within 48 hours</div>
+            <div class="contact-note">Monday – Friday</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:24px">
+        <div class="card-title">Quick Answers</div>
+        <div class="faq-quick">
+          <div class="faq-quick-item">
+            <strong>Is the calculator free?</strong>
+            <p>Yes, 100% free. No signup, no credit card, no limits.</p>
+          </div>
+          <div class="faq-quick-item">
+            <strong>Is my data saved?</strong>
+            <p>No. All calculations happen in your browser. We never see or store your financial data.</p>
+          </div>
+          <div class="faq-quick-item">
+            <strong>How accurate is it?</strong>
+            <p>Our calculator uses 2026 federal and state tax rates for estimates. For exact figures, consult your payroll department or a tax professional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: CONTACT FORM -->
+    <div class="card">
+      <div class="card-title">Send a Message</div>
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="John Smith">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="john@example.com">
+
+        <label for="subject">Subject</label>
+        <div class="select-wrap">
+          <select id="subject">
+            <option value="">Select a topic...</option>
+            <option value="bug">Report a bug or calculation error</option>
+            <option value="feature">Feature request or suggestion</option>
+            <option value="general">General question</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="select-arrow">▾</span>
+        </div>
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Tell us how we can help..."></textarea>
+
+        <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+
+        <div class="success-box" id="successBox">
+          <h3>✅ Message Sent!</h3>
+          <p>Thanks for reaching out. We'll get back to you within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<footer>
+  <p>© 2026 PaycheckEstimates.com — Free US Paycheck Calculator</p>
+  <div class="footer-links">
+    <a href="/">Calculator</a>
+    <a href="/privacy-policy.html">Privacy Policy</a>
+    <a href="/disclaimer.html">Disclaimer</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</footer>
+<script>
+function handleSubmit() {
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const subject = document.getElementById('subject').value;
+  const message = document.getElementById('message').value.trim();
+  if (!name || !email || !subject || !message) {
+    alert('Please fill in all fields before sending.');
+    return;
+  }
+  const mailtoLink = `mailto:contact@paycheckestimates.com?subject=${encodeURIComponent(subject + ' - ' + name)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
+  window.location.href = mailtoLink;
+  document.getElementById('successBox').classList.add('show');
+}
+</script>
+</body>
+</html>

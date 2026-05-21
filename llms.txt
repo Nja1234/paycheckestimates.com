@@ -1,0 +1,77 @@
+# PaycheckEstimates.com
+
+> Free US Paycheck Calculator — Calculate your exact take-home pay after federal tax, state tax, Social Security, and Medicare deductions for all 50 US states. Updated for 2026 tax rates.
+
+## About
+PaycheckEstimates.com is a free online paycheck calculator for US employees and workers. It provides instant, accurate take-home pay calculations after all federal and state tax deductions using the latest 2026 tax brackets and rates. No signup required. Works for all 50 US states plus Washington D.C.
+
+## Primary Tool
+- Paycheck Calculator: https://paycheckestimates.com/
+
+## Supporting Pages
+- Privacy Policy: https://paycheckestimates.com/privacy-policy.html
+- Disclaimer: https://paycheckestimates.com/disclaimer.html
+- Contact: https://paycheckestimates.com/contact.html
+
+## What This Tool Does
+PaycheckEstimates.com calculates US take-home pay by applying:
+- 2026 Federal income tax brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%)
+- State income tax rates for all 50 states and Washington D.C.
+- Social Security tax (6.2% up to $176,100 wage base)
+- Medicare tax (1.45% on all wages, 0.9% additional on wages over $200,000)
+- Pre-tax deductions including 401(k) contributions and health insurance premiums
+
+## Supported Inputs
+- Annual salary or hourly wage
+- Pay frequency: weekly, bi-weekly, semi-monthly, monthly, annually
+- Filing status: Single, Married Filing Jointly, Head of Household
+- All 50 US states and Washington D.C.
+- Pre-tax deductions: 401(k) percentage, health insurance per paycheck
+
+## Output
+- Net take-home pay per paycheck, monthly, and annually
+- Breakdown of all deductions: federal tax, state tax, Social Security, Medicare
+- Effective tax rate
+- Visual bar breakdown of each deduction
+
+## Key Questions This Tool Answers
+- How much of my paycheck goes to taxes?
+- What is my take-home pay after federal and state taxes?
+- How do I calculate my net pay from gross salary?
+- How much Social Security and Medicare tax is taken from my paycheck?
+- What is the difference between gross pay and net pay?
+- Which US states have no income tax?
+- How does filing status affect my paycheck?
+- How much does a 401k contribution reduce my taxes?
+- What are the federal tax brackets for 2026?
+- How do I calculate my effective tax rate?
+
+## Tax Data Used (2026)
+Federal standard deductions: Single $15,000 / Married $30,000 / Head of Household $22,500
+
+Federal tax brackets (Single filer):
+- 10%: $0 to $11,925
+- 12%: $11,926 to $48,475
+- 22%: $48,476 to $103,350
+- 24%: $103,351 to $197,300
+- 32%: $197,301 to $250,525
+- 35%: $250,526 to $626,350
+- 37%: over $626,350
+
+States with no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming
+
+## Intended Users
+- US employees calculating expected take-home pay
+- Job seekers comparing salary offers after taxes
+- Freelancers and self-employed individuals estimating net income
+- HR professionals explaining paycheck deductions to employees
+- Students and recent graduates entering the workforce
+- Anyone trying to understand their paycheck deductions
+
+## Keywords
+paycheck calculator, take home pay calculator, salary paycheck calculator, paycheck estimator, after tax income calculator, pay stub calculator, calculate my paycheck, payroll calculator 2026, net pay calculator, federal tax calculator, state income tax calculator, FICA calculator, Social Security tax calculator, Medicare tax calculator, US paycheck calculator, free paycheck calculator
+
+## Publisher
+- Website: https://paycheckestimates.com
+- Contact: contact@paycheckestimates.com
+- Last Updated: May 2026

@@ -15,9 +15,17 @@
 <meta property="og:url" content="https://paycheckestimates.com/">
 <meta property="og:type" content="website">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8661110254469846" crossorigin="anonymous"></script>
+<style>
+/* Critical CSS - renders instantly before fonts load */
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+h1,h2,h3,h4,.logo-text,.card-title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+header{background:#0B1D3A;height:60px}
+.hero{background:linear-gradient(135deg,#0B1D3A 0%,#162C52 100%);padding:52px 24px 64px}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"></noscript>
 
 <script type="application/ld+json">
 {
@@ -62,6 +70,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "A W-4 is the Employee's Withholding Certificate you fill out when starting a new job. It tells your employer how much federal income tax to withhold from each paycheck. Claiming more allowances reduces withholding (bigger paychecks, potentially owe at tax time). Claiming fewer allowances increases withholding (smaller paychecks, larger refund). The IRS updated the W-4 in 2020 to use dollar amounts instead of allowances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between bi-weekly and semi-monthly pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While they sound similar, they result in a different number of paychecks per year. Bi-weekly means you are paid every two weeks, resulting in 26 paychecks a year (which includes two months where you receive three paychecks). Semi-monthly means you are paid twice a month (usually the 1st and 15th), resulting in exactly 24 paychecks a year. Your individual paycheck will be slightly smaller on a bi-weekly schedule, but your total annual take-home pay remains the same."
       }
     },
     {
@@ -118,7 +134,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 16px;
@@ -126,7 +142,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,h2,h3,h4 { font-family: 'Sora', sans-serif; line-height: 1.25; }
+  h1,h2,h3,h4 { font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.25; }
 
   /* ── HEADER ── */
   header {
@@ -146,7 +162,7 @@
     height: 60px;
   }
   .logo {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: var(--white);
@@ -169,7 +185,7 @@
     border: 1px solid rgba(37,99,235,0.3);
     padding: 4px 12px;
     border-radius: 20px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 500;
   }
 
@@ -215,7 +231,7 @@
     border-radius: 20px;
   }
 
-  /* ── AD PLACEHOLDER ── */
+  /* ── AD PLACEHOLDER (UPDATED FOR CLS) ── */
   .ad-slot {
     background: #F1F5F9;
     border: 2px dashed #CBD5E1;
@@ -226,6 +242,11 @@
     font-size: 12px;
     margin: 20px auto;
     max-width: 728px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .ad-slot span { display: block; font-size: 11px; margin-top: 4px; }
 
@@ -248,7 +269,7 @@
     border: 1px solid var(--border);
   }
   .card-title {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--navy);
@@ -289,7 +310,7 @@
     height: 46px;
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     color: var(--text);
     background: var(--white);
@@ -355,7 +376,7 @@
     margin-bottom: 8px;
   }
   .result-net-amount {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: clamp(32px, 5vw, 46px);
     font-weight: 800;
     color: var(--white);
@@ -387,7 +408,7 @@
     transition: all 0.15s;
     border: none;
     background: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   .period-tab.active {
     background: var(--white);
@@ -419,7 +440,7 @@
   .breakdown-amount {
     font-size: 14px;
     font-weight: 600;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: var(--text);
   }
   .breakdown-bar-bg {
@@ -441,13 +462,13 @@
     border-top: 2px solid var(--navy);
   }
   .breakdown-total-label {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 14px;
     font-weight: 700;
     color: var(--navy);
   }
   .breakdown-total-amount {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--green);
@@ -464,47 +485,7 @@
     margin-top: 18px;
   }
   .eff-rate-label { font-size: 13px; color: #1D4ED8; font-weight: 500; }
-  .eff-rate-val { font-family: 'Sora', sans-serif; font-weight: 700; color: #1D4ED8; font-size: 18px; }
-
-  /* ── VISUAL CHART ── */
-  .chart-section { margin-top: 32px; }
-  .chart-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 16px;
-  }
-  .donut-wrap {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-  .donut-chart {
-    width: 120px; height: 120px;
-    flex-shrink: 0;
-  }
-  .donut-legend { flex: 1; }
-  .legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-  .legend-swatch {
-    width: 10px; height: 10px;
-    border-radius: 2px;
-    flex-shrink: 0;
-  }
-  .legend-pct {
-    margin-left: auto;
-    font-weight: 600;
-    font-family: 'Sora', sans-serif;
-    font-size: 12px;
-    color: var(--text);
-  }
+  .eff-rate-val { font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; color: #1D4ED8; font-size: 18px; }
 
   /* ── ZERO STATE ── */
   .zero-state {
@@ -549,7 +530,7 @@
   .tax-table th {
     background: var(--navy);
     color: var(--white);
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.04em;
@@ -585,7 +566,7 @@
     background: none;
     width: 100%;
     text-align: left;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   .faq-q:hover { background: var(--bg); }
   .faq-arrow {
@@ -620,7 +601,7 @@
     color: var(--white);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 700;
     font-size: 15px;
     margin-bottom: 12px;
@@ -636,7 +617,7 @@
     padding: 16px 20px;
     margin: 16px 0;
   }
-  .notax-box strong { color: var(--green); font-family: 'Sora', sans-serif; }
+  .notax-box strong { color: var(--green); font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
   .notax-box p { margin: 0; font-size: 14px; color: #065F46; }
 
   /* ── FOOTER ── */
@@ -656,7 +637,6 @@
   @media (max-width: 760px) {
     .tool-wrapper { grid-template-columns: 1fr; margin-top: -20px; }
     .field-row { grid-template-columns: 1fr; }
-    .donut-wrap { flex-direction: column; }
     .hero { padding: 36px 20px 48px; }
     main { padding: 0 16px 40px; }
     .card { padding: 20px; }
@@ -676,7 +656,6 @@
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <a href="/" class="logo">
@@ -687,7 +666,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <h1>US <span>Paycheck Calculator</span><br>Calculate Your Take-Home Pay</h1>
@@ -701,19 +679,15 @@
   </div>
 </section>
 
-<!-- AD TOP -->
 <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
   <div class="ad-slot" id="ad-top">
-    <!-- Google AdSense Ad Unit -->
     <span>Advertisement</span>
   </div>
 </div>
 
-<!-- MAIN TOOL -->
 <main>
   <div class="tool-wrapper">
 
-    <!-- INPUTS -->
     <div class="card">
       <div class="card-title">Your Pay Details</div>
 
@@ -868,7 +842,6 @@
 
     </div>
 
-    <!-- RESULTS -->
     <div class="card results-card">
       <div class="card-title">Your Paycheck Breakdown</div>
 
@@ -937,13 +910,10 @@
     </div>
   </div>
 
-  <!-- AD MIDDLE -->
   <div class="ad-slot" id="ad-middle">
-    <!-- Google AdSense Ad Unit -->
     <span>Advertisement</span>
   </div>
 
-  <!-- SEO CONTENT -->
   <div class="content-section">
     <h2>How Is My Paycheck Calculated?</h2>
     <p>Every US paycheck goes through a series of deductions before the money reaches your bank account. Understanding these deductions helps you plan your budget, negotiate salary, and avoid surprises at tax time. Here is exactly what gets taken out of your paycheck and why.</p>
@@ -973,7 +943,7 @@
     <p>FICA taxes fund Social Security and Medicare programs. Unlike income tax, these are flat rates applied to every dollar you earn up to certain limits. <strong>Social Security tax is 6.2%</strong> on earnings up to $176,100 in 2026. <strong>Medicare tax is 1.45%</strong> on all earnings with no cap. Together, FICA takes 7.65% from most paychecks. High earners over $200,000 pay an additional 0.9% Medicare surtax.</p>
 
     <h3>State Income Tax</h3>
-    <p>State taxes vary dramatically across the US. Nine states charge zero state income tax — Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Other states range from Pennsylvania's flat 3.07% to California's graduated rates reaching up to 13.3% for the highest earners.</p>
+    <p>State taxes vary dramatically across the US. Nine states charge zero state income tax — Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Other states range from Pennsylvania's flat 3.07% to California's graduated rates reaching up to 13.3% for the highest earners. <em>Note: For simplicity, our calculator currently uses an estimated blended flat rate for states with progressive tax brackets. For exact state-level bracket calculations, always consult your local tax authority.</em></p>
 
     <div class="notax-box">
       <strong>💡 Living in a no-tax state?</strong>
@@ -1013,9 +983,7 @@
 
     <hr class="content-divider">
 
-    <!-- AD BOTTOM -->
     <div class="ad-slot" id="ad-bottom">
-      <!-- Google AdSense Ad Unit -->
       <span>Advertisement</span>
     </div>
 
@@ -1055,6 +1023,13 @@
           <span class="faq-arrow">+</span>
         </button>
         <div class="faq-a">A W-4 (Employee's Withholding Certificate) is the form you fill out when starting a new job. It tells your employer how much federal income tax to withhold from each paycheck. The 2020 redesigned W-4 uses dollar amounts and life situation questions instead of the old allowance system. Claiming additional withholding increases the amount taken out each pay period (smaller check, larger refund). Reducing withholding means you keep more each pay period but may owe taxes at the end of the year. The IRS recommends using their Tax Withholding Estimator to fill out your W-4 accurately.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the difference between bi-weekly and semi-monthly pay?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">While they sound similar, they result in a different number of paychecks per year. <strong>Bi-weekly</strong> means you are paid every two weeks, resulting in 26 paychecks a year (which includes two months where you receive three paychecks). <strong>Semi-monthly</strong> means you are paid twice a month (usually the 1st and 15th), resulting in exactly 24 paychecks a year. Your individual paycheck will be slightly smaller on a bi-weekly schedule, but your total annual take-home pay remains the same.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">

@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Paycheck Calculator 2026 – Free US Take-Home Pay Estimator</title>
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,6 +89,7 @@
 <meta name="description" content="Free US paycheck calculator for 2026. Enter your salary and see your take-home pay after federal tax, state tax, Social Security and Medicare deductions.">
 <meta name="keywords" content="paycheck calculator, take home pay calculator, salary paycheck calculator, paycheck estimator, after tax income calculator, pay stub calculator, calculate my paycheck, payroll calculator 2026">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B1D3A">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2720%27 fill=%27%232563EB%27/><text y=%27.9em%27 font-size=%2770%27 x=%2710%27>💵</text></svg>">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><rect width=%27100%27 height=%27100%27 rx=%2720%27 fill=%27%232563EB%27/><text y=%27.9em%27 font-size=%2770%27 x=%2710%27>💵</text></svg>">
 <link rel="canonical" href="https://paycheckestimates.com/">
@@ -94,19 +97,50 @@
 <meta property="og:description" content="Calculate your exact take-home pay after all federal and state taxes. Free, instant, accurate for 2026.">
 <meta property="og:url" content="https://paycheckestimates.com/">
 <meta property="og:type" content="website">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8661110254469846" crossorigin="anonymous"></script>
+<script>
+// Defer AdSense loading for better Core Web Vitals
+(function() {
+  var adLoaded = false;
+  function loadAds() {
+    if (adLoaded) return;
+    adLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8661110254469846';
+    document.head.appendChild(s);
+  }
+  // Load after 3 seconds OR on first user interaction
+  setTimeout(loadAds, 3000);
+  ['mousedown','touchstart','keydown','scroll','wheel'].forEach(function(e) {
+    document.addEventListener(e, loadAds, {once: true, passive: true});
+  });
+})();
+</script>
 <style>
 /* Critical CSS - renders instantly before fonts load */
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
-h1,h2,h3,h4,.logo-text,.card-title{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+body{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif}
+h1,h2,h3,h4,.logo-text,.card-title{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif}
 header{background:#0B1D3A;height:60px}
 .hero{background:linear-gradient(135deg,#0B1D3A 0%,#162C52 100%);padding:52px 24px 64px}
+
+/* Performance optimizations */
+.result-net-amount { will-change: contents; }
+.breakdown-bar-fill { will-change: width; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+/* Better mobile tap targets */
+@media (max-width: 760px) {
+  .period-tab { min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .faq-q { min-height: 44px; }
+  select, input[type="number"] { min-height: 48px; font-size: 16px !important; }
+}
+/* Font rendering */
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Load fonts async to prevent render blocking -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"></noscript>
 
 <style>
   :root {
@@ -121,13 +155,13 @@ header{background:#0B1D3A;height:60px}
     --amber-pale: #FFFBEB;
     --red: #DC2626;
     --red-pale: #FEF2F2;
-    --slate: #64748B;
-    --slate-light: #94A3B8;
+    --slate: #4B5563;
+    --slate-light: #6B7280;
     --border: #E2E8F0;
     --bg: #F8FAFC;
     --white: #FFFFFF;
     --text: #0F172A;
-    --text-muted: #475569;
+    --text-muted: #374151;
     --radius: 12px;
     --radius-sm: 8px;
     --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
@@ -137,7 +171,7 @@ header{background:#0B1D3A;height:60px}
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
     font-size: 16px;
@@ -145,7 +179,7 @@ header{background:#0B1D3A;height:60px}
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,h2,h3,h4 { font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.25; }
+  h1,h2,h3,h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.25; }
 
   /* ── HEADER ── */
   header {
@@ -165,7 +199,7 @@ header{background:#0B1D3A;height:60px}
     height: 60px;
   }
   .logo {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     font-size: 18px;
     color: var(--white);
@@ -188,7 +222,7 @@ header{background:#0B1D3A;height:60px}
     border: 1px solid rgba(37,99,235,0.3);
     padding: 4px 12px;
     border-radius: 20px;
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 500;
   }
 
@@ -241,7 +275,7 @@ header{background:#0B1D3A;height:60px}
     border-radius: var(--radius-sm);
     text-align: center;
     padding: 20px;
-    color: var(--slate-light);
+    color: #6B7280;
     font-size: 12px;
     margin: 20px auto;
     max-width: 728px;
@@ -267,7 +301,7 @@ header{background:#0B1D3A;height:60px}
     border: 1px solid var(--border);
   }
   .card-title {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--navy);
@@ -303,12 +337,12 @@ header{background:#0B1D3A;height:60px}
     color: var(--slate);
     pointer-events: none;
   }
-  input[type="number"], select {
+  input[type="number"], select { font-size: 16px;
     width: 100%;
     height: 46px;
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
     color: var(--text);
     background: var(--white);
@@ -344,7 +378,7 @@ header{background:#0B1D3A;height:60px}
   }
   .deductions-section { display: none; }
   .deductions-section.open { display: block; }
-  .field-note { font-size: 11px; color: var(--slate-light); margin-top: 4px; }
+  .field-note { font-size: 11px; color: #6B7280; margin-top: 4px; }
 
   /* ── RESULTS ── */
   .results-card { position: relative; }
@@ -374,7 +408,7 @@ header{background:#0B1D3A;height:60px}
     margin-bottom: 8px;
   }
   .result-net-amount {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(32px, 5vw, 46px);
     font-weight: 800;
     color: var(--white);
@@ -406,7 +440,7 @@ header{background:#0B1D3A;height:60px}
     transition: all 0.15s;
     border: none;
     background: none;
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
   .period-tab.active {
     background: var(--white);
@@ -438,7 +472,7 @@ header{background:#0B1D3A;height:60px}
   .breakdown-amount {
     font-size: 14px;
     font-weight: 600;
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color: var(--text);
   }
   .breakdown-bar-bg {
@@ -460,13 +494,13 @@ header{background:#0B1D3A;height:60px}
     border-top: 2px solid var(--navy);
   }
   .breakdown-total-label {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 14px;
     font-weight: 700;
     color: var(--navy);
   }
   .breakdown-total-amount {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: var(--green);
@@ -483,12 +517,12 @@ header{background:#0B1D3A;height:60px}
     margin-top: 18px;
   }
   .eff-rate-label { font-size: 13px; color: #1D4ED8; font-weight: 500; }
-  .eff-rate-val { font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 700; color: #1D4ED8; font-size: 18px; }
+  .eff-rate-val { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 700; color: #1D4ED8; font-size: 18px; }
 
   /* ── VISUAL CHART ── */
   .chart-section { margin-top: 32px; }
   .chart-title {
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: var(--navy);
@@ -520,7 +554,7 @@ header{background:#0B1D3A;height:60px}
   .legend-pct {
     margin-left: auto;
     font-weight: 600;
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 12px;
     color: var(--text);
   }
@@ -529,7 +563,7 @@ header{background:#0B1D3A;height:60px}
   .zero-state {
     text-align: center;
     padding: 40px 20px;
-    color: var(--slate-light);
+    color: #6B7280;
   }
   .zero-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.4; }
   .zero-text { font-size: 14px; }
@@ -568,7 +602,7 @@ header{background:#0B1D3A;height:60px}
   .tax-table th {
     background: var(--navy);
     color: var(--white);
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.04em;
@@ -604,7 +638,7 @@ header{background:#0B1D3A;height:60px}
     background: none;
     width: 100%;
     text-align: left;
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
   .faq-q:hover { background: var(--bg); }
   .faq-arrow {
@@ -639,7 +673,7 @@ header{background:#0B1D3A;height:60px}
     color: var(--white);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 700;
     font-size: 15px;
     margin-bottom: 12px;
@@ -655,7 +689,7 @@ header{background:#0B1D3A;height:60px}
     padding: 16px 20px;
     margin: 16px 0;
   }
-  .notax-box strong { color: var(--green); font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .notax-box strong { color: var(--green); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
   .notax-box p { margin: 0; font-size: 14px; color: #065F46; }
 
   /* ── FOOTER ── */
@@ -1005,27 +1039,27 @@ header{background:#0B1D3A;height:60px}
     <div class="steps">
       <div class="step-card">
         <div class="step-num">1</div>
-        <h4>Enter Your Salary</h4>
+        <h3>Enter Your Salary</h3>
         <p>Input your annual salary or switch to hourly wage. Enter your hours per week if using hourly.</p>
       </div>
       <div class="step-card">
         <div class="step-num">2</div>
-        <h4>Choose Pay Frequency</h4>
+        <h3>Choose Pay Frequency</h3>
         <p>Select how often you get paid — weekly, bi-weekly, semi-monthly, or monthly.</p>
       </div>
       <div class="step-card">
         <div class="step-num">3</div>
-        <h4>Select Filing Status</h4>
+        <h3>Select Filing Status</h3>
         <p>Choose Single, Married Filing Jointly, or Head of Household to match your W-4.</p>
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
-        <h4>Pick Your State</h4>
+        <h3>Pick Your State</h3>
         <p>Select your state to automatically apply the correct 2026 state income tax rate in our <a href="/" style="color:var(--blue);text-decoration:none;font-weight:500">salary paycheck calculator</a>.</p>
       </div>
       <div class="step-card">
         <div class="step-num">5</div>
-        <h4>See Instant Results</h4>
+        <h3>See Instant Results</h3>
         <p>Your take-home pay updates instantly. Switch between per paycheck, monthly, and annual views.</p>
       </div>
     </div>

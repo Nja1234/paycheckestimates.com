@@ -215,6 +215,11 @@ header{background:#0B1D3A;height:60px}
     display: flex; align-items: center; justify-content: center;
     font-size: 16px;
   }
+
+  .header-nav { display: flex; align-items: center; gap: 4px; }
+  .nav-link { font-size: 13px; color: #93C5FD; text-decoration: none; padding: 6px 10px; border-radius: 6px; transition: background 0.15s, color 0.15s; font-weight: 500; }
+  .nav-link:hover { background: rgba(255,255,255,0.1); color: #fff; }
+  @media (max-width: 700px) { .header-nav { display: none; } }
   .header-badge {
     font-size: 12px;
     background: rgba(37,99,235,0.2);
@@ -736,6 +741,12 @@ header{background:#0B1D3A;height:60px}
       <div class="logo-icon">💵</div>
       PaycheckEstimates
     </a>
+    <nav class="header-nav">
+      <a href="/states/" class="nav-link">States</a>
+      <a href="/compare-states.html" class="nav-link">Compare</a>
+      <a href="/job-offer-calculator.html" class="nav-link">Job Offers</a>
+      <a href="/salary-raise-calculator.html" class="nav-link">Raise Calc</a>
+    </nav>
     <span class="header-badge">Updated for 2026</span>
   </div>
 </header>
@@ -1119,14 +1130,75 @@ header{background:#0B1D3A;height:60px}
     </div>
 
   </div>
+
+  <!-- MORE TOOLS -->
+  <div style="margin-top:40px">
+    <h2 style="font-size:clamp(20px,2.5vw,26px);font-weight:700;color:var(--navy);margin-bottom:16px">More Free Paycheck Tools</h2>
+    <p style="color:var(--text-muted);margin-bottom:20px;font-size:15px">Explore our full suite of free salary and paycheck tools for every financial situation.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+      <a href="/compare-states.html" style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);display:block;transition:border-color 0.15s,box-shadow 0.15s">
+        <div style="font-size:24px;margin-bottom:8px">🗺️</div>
+        <div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Compare States Calculator</div>
+        <div style="font-size:13px;color:var(--text-muted)">See how much more you earn in Texas vs California or any two states side by side.</div>
+      </a>
+      <a href="/job-offer-calculator.html" style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);display:block;transition:border-color 0.15s,box-shadow 0.15s">
+        <div style="font-size:24px;margin-bottom:8px">💼</div>
+        <div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Job Offer Comparison</div>
+        <div style="font-size:13px;color:var(--text-muted)">Which job actually pays more after taxes? Compare two offers instantly.</div>
+      </a>
+      <a href="/salary-raise-calculator.html" style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);display:block;transition:border-color 0.15s,box-shadow 0.15s">
+        <div style="font-size:24px;margin-bottom:8px">📈</div>
+        <div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Salary Raise Calculator</div>
+        <div style="font-size:13px;color:var(--text-muted)">How much extra take-home pay do you actually get from your raise?</div>
+      </a>
+      <a href="/states/" style="background:var(--white);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:var(--text);display:block;transition:border-color 0.15s,box-shadow 0.15s">
+        <div style="font-size:24px;margin-bottom:8px">📍</div>
+        <div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">State Paycheck Calculators</div>
+        <div style="font-size:13px;color:var(--text-muted)">Dedicated calculators for California, Texas, New York, Florida and 6 more states.</div>
+      </a>
+    </div>
+  </div>
+
 </main>
 
 <footer>
-  <p>© 2026 PaycheckEstimates.com — This calculator provides estimates for informational purposes only. Always consult a tax professional for advice specific to your situation.</p>
-  <div class="footer-links" style="margin-top:12px">
-    <a href="/privacy-policy.html">Privacy Policy</a>
-    <a href="/disclaimer.html">Disclaimer</a>
-    <a href="/contact.html">Contact</a>
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.08);text-align:left">
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:10px">Calculators</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <a href="/" style="font-size:13px;color:#94A3B8;text-decoration:none">💵 Paycheck Calculator</a>
+          <a href="/compare-states.html" style="font-size:13px;color:#94A3B8;text-decoration:none">🗺️ Compare States</a>
+          <a href="/job-offer-calculator.html" style="font-size:13px;color:#94A3B8;text-decoration:none">💼 Job Offer Comparison</a>
+          <a href="/salary-raise-calculator.html" style="font-size:13px;color:#94A3B8;text-decoration:none">📈 Salary Raise Calculator</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:10px">State Calculators</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 12px">
+          <a href="/states/california.html" style="font-size:12px;color:#94A3B8;text-decoration:none">California</a>
+          <a href="/states/texas.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Texas</a>
+          <a href="/states/new-york.html" style="font-size:12px;color:#94A3B8;text-decoration:none">New York</a>
+          <a href="/states/florida.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Florida</a>
+          <a href="/states/illinois.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Illinois</a>
+          <a href="/states/georgia.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Georgia</a>
+          <a href="/states/virginia.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Virginia</a>
+          <a href="/states/washington.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Washington</a>
+          <a href="/states/pennsylvania.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Pennsylvania</a>
+          <a href="/states/ohio.html" style="font-size:12px;color:#94A3B8;text-decoration:none">Ohio</a>
+        </div>
+        <a href="/states/" style="font-size:12px;color:#60A5FA;text-decoration:none;margin-top:6px;display:block">All States →</a>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:10px">Legal</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <a href="/privacy-policy.html" style="font-size:13px;color:#94A3B8;text-decoration:none">Privacy Policy</a>
+          <a href="/disclaimer.html" style="font-size:13px;color:#94A3B8;text-decoration:none">Disclaimer</a>
+          <a href="/contact.html" style="font-size:13px;color:#94A3B8;text-decoration:none">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:12px;margin-top:20px;color:#64748B">© 2026 PaycheckEstimates.com — This calculator provides estimates for informational purposes only. Always consult a tax professional for advice specific to your situation.</p>
   </div>
 </footer>
 

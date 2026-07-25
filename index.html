@@ -13,6 +13,22 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How do I estimate tax on paycheck amounts for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To estimate tax on paycheck amounts, enter your salary, filing status, and state into the calculator. It instantly applies 2026 federal tax brackets, Social Security, Medicare, and your state tax rate to show your exact take-home pay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the federal tax percentage on paycheck income in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The federal tax percentage on paycheck income ranges from 10% to 37% depending on taxable income and filing status. Single filers pay 10% on income up to $11,925, rising through several brackets up to 37% on income over $626,350. Only income within each bracket is taxed at that rate."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "How much federal tax is taken out of my paycheck?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -72,7 +88,11 @@
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Any",
   "browserRequirements": "Requires JavaScript",
-  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
   "featureList": [
     "Federal income tax calculation for 2026",
     "State income tax for all 50 US states",
@@ -751,7 +771,7 @@ header{background:#0B1D3A;height:60px}
 <section class="hero">
   <div class="hero-inner">
     <h1>US <span>Paycheck Calculator</span><br>Calculate Your Take-Home Pay</h1>
-    <p class="hero-sub">Enter your salary once and see exactly what lands in your bank account after every tax and deduction.</p>
+    <p class="hero-sub">This free federal paycheck calculator lets you estimate tax on your paycheck instantly — see exactly what lands in your bank account after every deduction.</p>
     <div class="hero-pills">
       <span class="hero-pill">✓ 2026 Federal Tax Brackets</span>
       <span class="hero-pill">✓ All 50 US States</span>
@@ -1005,6 +1025,11 @@ header{background:#0B1D3A;height:60px}
 
   <!-- SEO CONTENT -->
   <div class="content-section">
+    <h2>Federal Paycheck Calculator: Estimate Tax on Your Paycheck</h2>
+    <p>This federal paycheck calculator helps you estimate tax on your paycheck in seconds. Enter your salary once. See your results instantly.</p>
+    <p>Wondering about the federal tax percentage on your paycheck? It depends on your income and filing status. The 2026 federal brackets run from 10% to 37%. Most workers fall in the 12% or 22% bracket. Your paycheck also includes state tax and local taxes where applicable, plus Social Security and Medicare.</p>
+    <p>Use this tool anytime you get a raise, change jobs, or move to a new state. It updates instantly as you type — no waiting, no signup.</p>
+
     <h2>How Is My Paycheck Calculated?</h2>
     <p>Every US paycheck goes through a series of deductions before the money reaches your bank account. Understanding these deductions helps you plan your budget, negotiate salary, and avoid surprises at tax time. Here is exactly what gets taken out of your paycheck and why.</p>
 
@@ -1033,7 +1058,7 @@ header{background:#0B1D3A;height:60px}
     <p>FICA taxes fund Social Security and Medicare programs. Unlike income tax, these are flat rates applied to every dollar you earn up to certain limits. <strong>Social Security tax is 6.2%</strong> on earnings up to $176,100 in 2026. <strong>Medicare tax is 1.45%</strong> on all earnings with no cap. Together, FICA takes 7.65% from most paychecks. High earners over $200,000 pay an additional 0.9% Medicare surtax.</p>
 
     <h3>State Income Tax</h3>
-    <p>State taxes vary dramatically across the US. Nine states charge zero state income tax — Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Other states range from Pennsylvania's flat 3.07% to California's graduated rates reaching up to 13.3% for the highest earners.</p>
+    <p>State and local taxes vary dramatically across the US. Nine states charge zero state income tax — Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Other states range from Pennsylvania's flat 3.07% to California's graduated rates reaching up to 13.3% for the highest earners.</p>
 
     <div class="notax-box">
       <strong>💡 Living in a no-tax state?</strong>
@@ -1081,6 +1106,20 @@ header{background:#0B1D3A;height:60px}
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I estimate tax on paycheck amounts for 2026?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">To estimate tax on paycheck amounts, enter your salary, filing status, and state into the calculator above. It instantly applies 2026 federal tax brackets, Social Security, Medicare, and your state's tax rate to show your exact take-home pay. No manual math or spreadsheets required — results update as you type.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the federal tax percentage on paycheck income in 2026?
+          <span class="faq-arrow">+</span>
+        </button>
+        <div class="faq-a">The federal tax percentage on paycheck income ranges from 10% to 37% depending on your taxable income and filing status. For 2026, single filers pay 10% on income up to $11,925, rising through 12%, 22%, 24%, 32%, and 35% brackets, up to 37% on income over $626,350. Only the income within each bracket is taxed at that rate — not your full salary.</div>
+      </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
           How much federal tax is taken out of my paycheck?

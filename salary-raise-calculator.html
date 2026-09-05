@@ -91,6 +91,8 @@ footer a{color:#60A5FA;text-decoration:none;}
 .fl{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
 @media(max-width:700px){.tool-wrap{grid-template-columns:1fr;}.fr{grid-template-columns:1fr;}.compare-box{grid-template-columns:1fr;}main{padding:0 16px 40px;}.card{padding:20px;}}
 </style>
+  <!-- SHARED 2026 TAX DATA -->
+  <script src="data/tax-data-2026.js"></script>
 </head>
 <body>
 <header>
@@ -231,8 +233,8 @@ footer a{color:#60A5FA;text-decoration:none;}
 </footer>
 <script>
 const sr={AL:0.05,AK:0,AZ:0.025,AR:0.044,CA:0.093,CO:0.044,CT:0.05,DE:0.066,FL:0,GA:0.0539,HI:0.0825,ID:0.058,IL:0.0495,IN:0.0305,IA:0.038,KS:0.0558,KY:0.04,LA:0.03,ME:0.0715,MD:0.0575,MA:0.05,MI:0.0425,MN:0.0985,MS:0.047,MO:0.048,MT:0.059,NE:0.0584,NV:0,NH:0,NJ:0.0897,NM:0.059,NY:0.0685,NC:0.0475,ND:0.025,OH:0.035,OK:0.0475,OR:0.099,PA:0.0307,RI:0.0599,SC:0.062,SD:0,TN:0,TX:0,UT:0.0485,VT:0.0875,VA:0.0575,WA:0,WV:0.0512,WI:0.0765,WY:0,DC:0.085};
-const bk={single:[[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]],married:[[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]],hoh:[[17000,.10],[64850,.12],[103350,.22],[197300,.24],[250500,.32],[626350,.35],[Infinity,.37]]};
-const sd={single:15000,married:30000,hoh:22500};
+const bk=TAX_2026.federalBrackets;
+const sd=TAX_2026.standardDeduction;
 function cF(i,s){let t=0,p=0;for(const[l,r]of bk[s]){if(i<=p)break;t+=(Math.min(i,l)-p)*r;p=l;}return Math.max(0,t);}
 const f=n=>'$'+Math.abs(Math.round(n)).toLocaleString('en-US');
 const fp=n=>'+$'+Math.abs(Math.round(n)).toLocaleString('en-US');
@@ -244,7 +246,7 @@ function syncRaise(src){
   else{const pct=parseFloat(document.getElementById('raisePct').value)||0;document.getElementById('raiseAmt').value=Math.round(cur*pct/100);}
   calc();
 }
-function calcNet(sal,state,status){const fed=cF(Math.max(0,sal-sd[status]),status);const ss=Math.min(sal,176100)*0.062;const med=sal*0.0145;const st=sal*(sr[state]||0);return{fed,ss,med,st,net:sal-fed-ss-med-st};}
+function calcNet(sal,state,status){const fed=cF(Math.max(0,sal-sd[status]),status);const ss=Math.min(sal,TAX_2026.payroll.socialSecurityWageBase)*TAX_2026.payroll.socialSecurityRate;const med=sal*TAX_2026.payroll.medicareRate + Math.max(0,sal-TAX_2026.payroll.additionalMedicareWithholdingThreshold)*TAX_2026.payroll.additionalMedicareRate;const st=sal*(sr[state]||0);return{fed,ss,med,st,net:sal-fed-ss-med-st};}
 function calc(){
   const cur=parseFloat(document.getElementById('curSal').value)||0;
   const raise=parseFloat(document.getElementById('raiseAmt').value)||0;

@@ -1,9 +1,9 @@
 # PaycheckEstimates.com
 
-> Free US Paycheck Calculator — Calculate your exact take-home pay after federal tax, state tax, Social Security, and Medicare deductions for all 50 US states. Updated for 2026 tax rates.
+> Free US Paycheck Calculator — Estimate your take-home pay after federal tax, state tax, Social Security, and Medicare deductions for all 50 US states. Updated for 2026 tax rates.
 
 ## About
-PaycheckEstimates.com is a free online paycheck calculator for US employees and workers. It provides instant, accurate take-home pay calculations after all federal and state tax deductions using the latest 2026 tax brackets and rates. No signup required. Works for all 50 US states plus Washington D.C.
+PaycheckEstimates.com is a free online paycheck calculator for US employees and workers. It provides instant take-home pay estimates after all federal and state tax deductions using the 2026 tax brackets and payroll rates. No signup required. Works for all 50 US states plus Washington D.C.
 
 ## Primary Tool
 - Paycheck Calculator: https://paycheckestimates.com/
@@ -17,7 +17,7 @@ PaycheckEstimates.com is a free online paycheck calculator for US employees and 
 PaycheckEstimates.com calculates US take-home pay by applying:
 - 2026 Federal income tax brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%)
 - State income tax rates for all 50 states and Washington D.C.
-- Social Security tax (6.2% up to $176,100 wage base)
+- Social Security tax (6.2% up to $184,500 wage base)
 - Medicare tax (1.45% on all wages, 0.9% additional on wages over $200,000)
 - Pre-tax deductions including 401(k) contributions and health insurance premiums
 
@@ -47,18 +47,15 @@ PaycheckEstimates.com calculates US take-home pay by applying:
 - How do I calculate my effective tax rate?
 
 ## Tax Data Used (2026)
-Federal standard deductions: Single $15,000 / Married $30,000 / Head of Household $22,500
+Federal standard deductions: Single $16,100 / Married Filing Jointly $32,200 / Head of Household $24,150
 
-Federal tax brackets (Single filer):
-- 10%: $0 to $11,925
-- 12%: $11,926 to $48,475
-- 22%: $48,476 to $103,350
-- 24%: $103,351 to $197,300
-- 32%: $197,301 to $250,525
-- 35%: $250,526 to $626,350
-- 37%: over $626,350
+Federal marginal tax brackets (2026):
+- Single: 10% to $12,400; 12% to $50,400; 22% to $105,700; 24% to $201,775; 32% to $256,225; 35% to $640,600; 37% above $640,600
+- Married Filing Jointly: 10% to $24,800; 12% to $100,800; 22% to $211,400; 24% to $403,550; 32% to $512,450; 35% to $768,700; 37% above $768,700
+- Head of Household: 10% to $17,700; 12% to $67,450; 22% to $105,700; 24% to $201,750; 32% to $256,200; 35% to $640,600; 37% above $640,600
 
-States with no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming
+Social Security: 6.2% employee rate on wages up to the $184,500 2026 wage base. Medicare: 1.45% on covered wages, plus 0.9% Additional Medicare Tax withholding on wages over $200,000.
+2026 401(k) employee elective-deferral limit: $24,500.
 
 ## Intended Users
 - US employees calculating expected take-home pay
@@ -74,4 +71,4 @@ paycheck calculator, take home pay calculator, salary paycheck calculator, paych
 ## Publisher
 - Website: https://paycheckestimates.com
 - Contact: contact@paycheckestimates.com
-- Last Updated: May 2026
+- Last Updated: September 2026

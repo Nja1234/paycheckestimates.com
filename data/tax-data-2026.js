@@ -59,9 +59,15 @@ const TAX_2026 = Object.freeze({
    * VA: 2/3/5/5.75% schedule with 2026 standard deduction $8,750/$17,500.
    */
   stateRules: Object.freeze({
+    AK: Object.freeze({ type: 'none' }),
     FL: Object.freeze({ type: 'none' }),
+    NV: Object.freeze({ type: 'none' }),
+    NH: Object.freeze({ type: 'none' }),
+    SD: Object.freeze({ type: 'none' }),
+    TN: Object.freeze({ type: 'none' }),
     TX: Object.freeze({ type: 'none' }),
     WA: Object.freeze({ type: 'none' }),
+    WY: Object.freeze({ type: 'none' }),
 
     GA: Object.freeze({
       type: 'flat',
@@ -254,4 +260,36 @@ function calculateStateIncomeTax(state, grossWages, preTaxDeductions, filingStat
   }
 
   return 0;
+}
+
+
+/*
+ * Fallback state-rate estimates for states that do not yet have a detailed
+ * 2026 rule above. These are intentionally labeled as estimates in the UI.
+ * They are NOT a substitute for state withholding tables, credits, local
+ * taxes, reciprocity rules, or a filed tax return.
+ */
+const APPROX_STATE_RATES_2026 = Object.freeze({
+  AL:0.05, AK:0, AZ:0.025, AR:0.044, CA:0.093, CO:0.044, CT:0.05,
+  DE:0.066, FL:0, GA:0.0499, HI:0.0825, ID:0.058, IL:0.0495,
+  IN:0.0295, IA:0.038, KS:0.0558, KY:0.04, LA:0.03, ME:0.0715,
+  MD:0.0575, MA:0.05, MI:0.0425, MN:0.0985, MS:0.047, MO:0.048,
+  MT:0.059, NE:0.0584, NV:0, NH:0, NJ:0.0897, NM:0.059, NY:0.0685,
+  NC:0.0399, ND:0.025, OH:0.0275, OK:0.0475, OR:0.099, PA:0.0307,
+  RI:0.0599, SC:0.062, SD:0, TN:0, TX:0, UT:0.0485, VT:0.0875,
+  VA:0.0575, WA:0, WV:0.0512, WI:0.0765, WY:0, DC:0.085
+});
+
+function hasDetailedStateTaxRule(state) {
+  return Object.prototype.hasOwnProperty.call(TAX_2026.stateRules, state);
+}
+
+function calculateStateIncomeTaxEstimate(state, grossWages, preTaxDeductions, filingStatus) {
+  if (hasDetailedStateTaxRule(state)) {
+    return calculateStateIncomeTax(state, grossWages, preTaxDeductions, filingStatus);
+  }
+  const gross = Math.max(0, Number(grossWages));
+  const preTax = Math.max(0, Number(preTaxDeductions));
+  const taxable = Math.max(0, gross - preTax);
+  return taxable * (APPROX_STATE_RATES_2026[state] || 0);
 }

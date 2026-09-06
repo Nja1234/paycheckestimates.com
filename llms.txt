@@ -9,6 +9,7 @@ PaycheckEstimates.com is a free online paycheck calculator for US employees and 
 - Paycheck Calculator: https://paycheckestimates.com/
 
 ## Supporting Pages
+- Methodology & Tax Sources: https://paycheckestimates.com/methodology.html
 - Privacy Policy: https://paycheckestimates.com/privacy-policy.html
 - Disclaimer: https://paycheckestimates.com/disclaimer.html
 - Contact: https://paycheckestimates.com/contact.html
@@ -71,4 +72,4 @@ paycheck calculator, take home pay calculator, salary paycheck calculator, paych
 ## Publisher
 - Website: https://paycheckestimates.com
 - Contact: contact@paycheckestimates.com
-- Last Updated: September 2026
+- Last Updated: September 6, 2026

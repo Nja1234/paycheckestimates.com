@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Salary Raise Calculator 2026 – Take-Home Pay After a Raise</title>
-<meta name="description" content="Free salary raise calculator for 2026. Enter your current salary and raise percentage to see exactly how much extra take-home pay you get after federal tax, state tax, and FICA deductions.">
+<meta name="description" content="Free 2026 salary raise calculator. Estimate how much extra take-home pay you keep after federal, state, Social Security and Medicare taxes.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://paycheckestimates.com/salary-raise-calculator.html">
 <meta name="theme-color" content="#0B1D3A">
@@ -200,7 +200,7 @@ footer a{color:#60A5FA;text-decoration:none;}
   </div>
   <div class="content-section">
     <h2>How Much of Your Raise Do You Actually Keep?</h2>
-    <p>When you get a raise, you don't keep 100% of it. Federal income tax, state income tax, Social Security, and Medicare all take a share. The percentage you keep depends on your tax bracket and state. Our free <a href="/salary-raise-calculator.html" style="color:var(--blue)">salary raise calculator</a> shows you the exact after-tax amount for your specific situation.</p>
+    <p>When you get a raise, you don't keep 100% of it. Federal income tax, state income tax, Social Security, and Medicare all take a share. The percentage you keep depends on your tax bracket and state. Our free <a href="/salary-raise-calculator.html" style="color:var(--blue)">salary raise calculator</a> estimates the after-tax amount for the information you enter.</p>
     <div class="example-box">
       <h4>Example: $5,000 raise in California (Single, 22% federal bracket)</h4>
       <div class="example-row"><span>Gross raise</span><span>$5,000</span></div>
@@ -219,6 +219,7 @@ footer a{color:#60A5FA;text-decoration:none;}
       <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I negotiate a raise knowing the after-tax amount?<span class="faq-arrow">+</span></button><div class="faq-a">Use this calculator to determine how much extra take-home pay you need, then work backwards to the gross raise amount. For example, if you want $400 more per month after taxes, you may need to negotiate for a $6,000–$7,000 annual raise depending on your tax situation.</div></div>
     </div>
   </div>
+<div style="max-width:1000px;margin:0 auto 24px;padding:0 20px;font-size:12px;color:#64748B">Tax results are a planning estimate; local taxes, credits and special withholding elections may not be included. <a href="/methodology.html">Methodology & sources</a>.</div>
 </main>
 <footer>
   <p>© 2026 PaycheckEstimates.com — Free US Paycheck Calculator</p>
@@ -232,7 +233,7 @@ footer a{color:#60A5FA;text-decoration:none;}
   </div>
 </footer>
 <script>
-const sr={AL:0.05,AK:0,AZ:0.025,AR:0.044,CA:0.093,CO:0.044,CT:0.05,DE:0.066,FL:0,GA:0.0539,HI:0.0825,ID:0.058,IL:0.0495,IN:0.0305,IA:0.038,KS:0.0558,KY:0.04,LA:0.03,ME:0.0715,MD:0.0575,MA:0.05,MI:0.0425,MN:0.0985,MS:0.047,MO:0.048,MT:0.059,NE:0.0584,NV:0,NH:0,NJ:0.0897,NM:0.059,NY:0.0685,NC:0.0475,ND:0.025,OH:0.035,OK:0.0475,OR:0.099,PA:0.0307,RI:0.0599,SC:0.062,SD:0,TN:0,TX:0,UT:0.0485,VT:0.0875,VA:0.0575,WA:0,WV:0.0512,WI:0.0765,WY:0,DC:0.085};
+// State tax logic is centralized in data/tax-data-2026.js.
 const bk=TAX_2026.federalBrackets;
 const sd=TAX_2026.standardDeduction;
 function cF(i,s){let t=0,p=0;for(const[l,r]of bk[s]){if(i<=p)break;t+=(Math.min(i,l)-p)*r;p=l;}return Math.max(0,t);}
@@ -246,7 +247,7 @@ function syncRaise(src){
   else{const pct=parseFloat(document.getElementById('raisePct').value)||0;document.getElementById('raiseAmt').value=Math.round(cur*pct/100);}
   calc();
 }
-function calcNet(sal,state,status){const fed=cF(Math.max(0,sal-sd[status]),status);const ss=Math.min(sal,TAX_2026.payroll.socialSecurityWageBase)*TAX_2026.payroll.socialSecurityRate;const med=sal*TAX_2026.payroll.medicareRate + Math.max(0,sal-TAX_2026.payroll.additionalMedicareWithholdingThreshold)*TAX_2026.payroll.additionalMedicareRate;const st=sal*(sr[state]||0);return{fed,ss,med,st,net:sal-fed-ss-med-st};}
+function calcNet(sal,state,status){const fed=cF(Math.max(0,sal-sd[status]),status);const ss=Math.min(sal,TAX_2026.payroll.socialSecurityWageBase)*TAX_2026.payroll.socialSecurityRate;const med=sal*TAX_2026.payroll.medicareRate + Math.max(0,sal-TAX_2026.payroll.additionalMedicareWithholdingThreshold)*TAX_2026.payroll.additionalMedicareRate;const st=calculateStateIncomeTaxEstimate(state,sal,0,status);return{fed,ss,med,st,net:sal-fed-ss-med-st};}
 function calc(){
   const cur=parseFloat(document.getElementById('curSal').value)||0;
   const raise=parseFloat(document.getElementById('raiseAmt').value)||0;

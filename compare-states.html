@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>State Income Tax Comparison Calculator 2026</title>
-<meta name="description" content="Compare take-home pay between any two US states. See exactly how much more you earn by moving from California to Texas or any state to another. Free 2026 state tax comparison tool.">
+<meta name="description" content="Compare estimated take-home pay between two US states using 2026 federal, FICA and state-tax rules. Free side-by-side calculator.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://paycheckestimates.com/compare-states.html">
 <meta property="og:title" content="State Income Tax Comparison Calculator 2026">
-<meta property="og:description" content="Compare take-home pay between any two US states side by side. Free, instant, accurate for 2026.">
+<meta property="og:description" content="Compare estimated take-home pay between two US states with 2026 tax data.">
 <meta name="theme-color" content="#0B1D3A">
 <script type="application/ld+json">
 {
@@ -23,7 +23,7 @@
     {
       "@type": "Question",
       "name": "How much more do you earn in Texas vs California?",
-      "acceptedAnswer": {"@type": "Answer", "text": "On a $80,000 salary, moving from California to Texas saves approximately $5,000–$7,000 per year in state income tax alone. California's top rate reaches 13.3% while Texas has no income tax. Use our comparison tool above to calculate the exact difference for your specific salary."}
+      "acceptedAnswer": {"@type": "Answer", "text": "On a $80,000 salary, moving from California to Texas saves approximately $5,000–$7,000 per year in state income tax alone. California's top rate reaches 13.3% while Texas has no income tax. Use our comparison tool above to estimate the difference for your specific salary."}
     },
     {
       "@type": "Question",
@@ -246,6 +246,7 @@ footer a{color:#60A5FA;text-decoration:none;}
   </div>
 
   <div class="content-section">
+    <p style="font-size:13px;color:var(--muted);background:#F8FAFC;border:1px solid #E2E8F0;padding:12px;border-radius:8px"><strong>Accuracy note:</strong> Detailed 2026 state rules are used where verified; remaining states use a simplified reference rate. Local taxes and individual credits may not be included. <a href="/methodology.html">Methodology & sources</a>.</p>
     <h2>US State Income Tax Rates 2026</h2>
     <p>Use this reference table to quickly compare state income tax rates across the US before using our comparison calculator above.</p>
     <div class="state-table-wrap">
@@ -257,7 +258,7 @@ footer a{color:#60A5FA;text-decoration:none;}
           <tr><td>California</td><td>1%–13.3%</td><td>Progressive</td><td>Highest in US</td></tr>
           <tr><td>Colorado</td><td>4.4%</td><td>Flat</td><td></td></tr>
           <tr><td>Florida</td><td class="notax">0%</td><td>None</td><td>No income tax</td></tr>
-          <tr><td>Georgia</td><td>5.39%</td><td>Flat</td><td>Decreasing to 4.99%</td></tr>
+          <tr><td>Georgia</td><td>4.99%</td><td>Flat</td><td>2026 rate</td></tr>
           <tr><td>Illinois</td><td>4.95%</td><td>Flat</td><td></td></tr>
           <tr><td>Massachusetts</td><td>5%</td><td>Flat</td><td></td></tr>
           <tr><td>Michigan</td><td>4.25%</td><td>Flat</td><td></td></tr>
@@ -265,8 +266,8 @@ footer a{color:#60A5FA;text-decoration:none;}
           <tr><td>New Hampshire</td><td class="notax">0%</td><td>None</td><td>Wages not taxed</td></tr>
           <tr><td>New Jersey</td><td>1.4%–10.75%</td><td>Progressive</td><td></td></tr>
           <tr><td>New York</td><td>4%–10.9%</td><td>Progressive</td><td>+NYC local tax</td></tr>
-          <tr><td>North Carolina</td><td>4.75%</td><td>Flat</td><td></td></tr>
-          <tr><td>Ohio</td><td>0%–3.5%</td><td>Progressive</td><td>0% under $26,050</td></tr>
+          <tr><td>North Carolina</td><td>3.99%</td><td>Flat</td><td>2026 rate</td></tr>
+          <tr><td>Ohio</td><td>0%–2.75%</td><td>Progressive</td><td>$332 + 2.75% over $26,050 in 2026</td></tr>
           <tr><td>Oregon</td><td>4.75%–9.9%</td><td>Progressive</td><td></td></tr>
           <tr><td>Pennsylvania</td><td>3.07%</td><td>Flat</td><td>Lowest in northeast</td></tr>
           <tr><td>South Dakota</td><td class="notax">0%</td><td>None</td><td>No income tax</td></tr>
@@ -311,7 +312,7 @@ footer a{color:#60A5FA;text-decoration:none;}
 </footer>
 
 <script>
-const stateRates={AL:0.05,AK:0,AZ:0.025,AR:0.044,CA:0.093,CO:0.044,CT:0.05,DE:0.066,FL:0,GA:0.0539,HI:0.0825,ID:0.058,IL:0.0495,IN:0.0305,IA:0.038,KS:0.0558,KY:0.04,LA:0.03,ME:0.0715,MD:0.0575,MA:0.05,MI:0.0425,MN:0.0985,MS:0.047,MO:0.048,MT:0.059,NE:0.0584,NV:0,NH:0,NJ:0.0897,NM:0.059,NY:0.0685,NC:0.0475,ND:0.025,OH:0.035,OK:0.0475,OR:0.099,PA:0.0307,RI:0.0599,SC:0.062,SD:0,TN:0,TX:0,UT:0.0485,VT:0.0875,VA:0.0575,WA:0,WV:0.0512,WI:0.0765,WY:0,DC:0.085};
+// State tax logic is centralized in data/tax-data-2026.js.
 const stateNames={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming',DC:'Washington D.C.'};
 const brackets=TAX_2026.federalBrackets;
 const stdDed=TAX_2026.standardDeduction;
@@ -324,7 +325,7 @@ function calcNet(salary,state,status){
   const fed=calcFed(Math.max(0,salary-stdDed[status]),status);
   const ss=Math.min(salary,TAX_2026.payroll.socialSecurityWageBase)*TAX_2026.payroll.socialSecurityRate;
   const med=salary*TAX_2026.payroll.medicareRate+Math.max(0,salary-TAX_2026.payroll.additionalMedicareWithholdingThreshold)*TAX_2026.payroll.additionalMedicareRate;
-  const st=salary*(stateRates[state]||0);
+  const st=calculateStateIncomeTaxEstimate(state,salary,0,status);
   return{gross:salary,fed,ss,med,st,fica:ss+med,net:salary-fed-ss-med-st};
 }
 function runCompare(){
